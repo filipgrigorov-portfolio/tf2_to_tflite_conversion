@@ -22,6 +22,6 @@ if __name__ == '__main__':
 
     st = time.time()
     tf2_to_tflite(args.saved_model_dir, args.output_dir)
-    print(f'time: {(time.time() - st) * 1e6}us')
+    print(f'time: {(time.time() - st) * 1e3}ms')
 
     print('Conversion is complete')
