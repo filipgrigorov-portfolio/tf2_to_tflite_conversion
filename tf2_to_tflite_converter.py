@@ -44,6 +44,9 @@ def tf2_to_tflite(config):
     signatures = interpreter.get_signature_list()
     print(f'List of signatures (after conversion): {signatures}')
 
+    print(f'\nInputs:\n{interpreter.get_input_details()}\n')
+    print(f'\nOutputs:\n{interpreter.get_output_details()}\n')
+
     with open(os.path.join(tflite_output_path, f'{tf_model_name}.tflite'), 'wb') as file:
         file.write(tflite_model)
 
