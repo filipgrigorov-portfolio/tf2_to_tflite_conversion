@@ -38,6 +38,8 @@ def tf2_to_tflite(config):
     )
 
     converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS]
+    converter.target_spec.supported_types = [tf.float16]
+    
     tflite_model = converter.convert()
 
     interpreter = tf.lite.Interpreter(model_content=tflite_model)
